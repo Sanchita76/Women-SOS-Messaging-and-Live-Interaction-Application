@@ -242,7 +242,55 @@ Haven’s law bot is designed to provide **clear, understandable** information o
 
 The law bot provides **immediate access** to legal knowledge, which can be a **game-changer** for women who otherwise might not know their rights or how to protect themselves . By offering **timely legal insights**, women can make more informed decisions about their safety, custody battles, or financial security, ultimately empowering them to take **control** of their lives 
 
----
+### **How AI Is Used Throughout the Project 🤖:**
+
+**(Category: Best Use of Amazon Bedrock)**
+
+- Text Generation and Text Expansion ✍️
+
+  - AI powers Haven's ability to transform brief, incomplete messages into coherent, full distress signals. Through Large Language Models (LLMs) like Titan Text G1 - Express, Haven expands user input, turning simple keywords or short phrases into comprehensive messages. This is essential in high-stress situations where a woman may not have the time or mental clarity to articulate her circumstances in full. The model ensures that the message accurately represents the severity of the situation while still being discreet.
+  - Example: If a user types “help, scared, locked in room,” the AI expands it into a full message like: "I am trapped in my room, scared and unable to leave. Please help me." This message is then encoded in an image to be shared safely.
+  - Using **Titan Text G1 - Express** LLM model
+
+- Culprit matching
+    - When a user reports a distress situation, details about the culprit's physical and behavioral characteristics are embedded as vector representations. These embeddings capture nuanced details about the individual, creating a unique profile that is stored in MongoDB’s vector database.
+   - Similarity Search with Cosine Similarity:
+    When an authority initiates a search by selecting "Find Match," the system performs a cosine similarity operation on the stored embeddings. By comparing the incoming profile with existing data, the system identifies top N matches based on similarity scores, allowing authorities to see connections across reported cases.
+  - Using **Titan Text G1 - Express** LLM model
+
+- AI-Powered Poem Generation 📝
+
+  - In moments of emotional distress, sometimes the simplest words can bring comfort. Haven's AI-Powered Poem Generator provides empowering, reassuring poems designed to remind women that help is on the way and that they are not alone. The AI generates short, encouraging poems based on the user's emotional state or current needs. These poems are designed to provide emotional support and the assurance that change is possible.
+  - Using **Titan Text G1 - Express** LLM model
+
+- AI to Detect Severity of Situations 🚨
+
+  - The LLM processes large text inputs and sorts them based on the severity and nature of the abuse, making it easier for authorities to quickly take action without reading through long descriptions. 
+
+- Image Generation 🖼️
+
+  - AI is used to create custom images based on user input, such as landscapes, flowers, or everyday objects. This enables the use of steganography—embedding distress messages within the images. These generated images appear completely innocent to outsiders, while secretly containing encoded help requests.
+  - Example: A user may select an image of a flower. The AI embeds a distress message, which looks like a normal social media post but contains a hidden cry for help when decoded.
+  - Using **Titan Image Generator VI** LLM model
+
+- AI-Powered Law Bot for Legal Support ⚖️
+
+  - Haven’s Law Bot leverages AI to offer instant, confidential legal guidance. Trained on a vast array of legal resources—including national constitutions, local laws, and case precedents—the AI provides women with easy-to-understand answers to their legal questions, empowering them to take control of their situations. The Law Bot breaks down complex legal jargon into simple language, ensuring clarity and accessibility.
+  - Example: A user can ask, "What should I do if my spouse is abusing me?" and the Law Bot will provide a clear step-by-step answer based on the relevant legal rights, such as filing a complaint or seeking a restraining order. 
+  - Using **Titan Text G1 - Express** LLM model
+
+- Therapy Bot for Mental Health Support 💬
+
+  - Haven’s Therapy Bot uses AI to provide personalized mental health support. This bot offers coping strategies, emotional support, and mindfulness exercises to help women manage anxiety, depression, and PTSD. By analyzing the user's input, the AI tailors its responses to the emotional state of the user, ensuring relevant advice is given in real-time.
+  - Example: If a user is feeling anxious, the Therapy Bot may suggest breathing exercises, a grounding technique, or offer calming affirmations to reduce stress.
+  - Using **Titan Text G1 - Express** LLM model
+
+
+- Vector Embedding for Personalized Experience 🧠
+
+  - To make interactions with the AI more personalized and contextually aware, vector embeddings are used to store and retrieve information. For each user, key data points (like their emotional state, past conversations, and preferences) are stored in MongoDB using embeddings generated from AI models like Sentence Transformers. This allows the AI to provide more informed responses over time.
+  - Example: The AI can remember past interactions, such as a user’s previous emotional states or preferred coping strategies. This personalized knowledge allows the AI to provide more targeted advice, improving the support it offers over time.
+  -  Using **Titan Text G1 - Express** LLM model and **LangChain for embedding**
 
 ### **How We Built It 🔧**
 
@@ -346,116 +394,3 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 
 
 ---
-
-### **Where MongoDB is used 🤖:**
-- Used as db for distress sos message and for saving culprit info & embedding
-![Law Bot Image](https://storage.googleapis.com/example-offi-1/mongo.webp)
-
-
-- Used as a vector store for legal documents. The law chatbot uses this for its custom knowledge base
-![Law Bot Image](https://storage.googleapis.com/example-offi-1/docembeddeing.webp)
-
-- If user permits, save important details from their therapy session into db so that the therapy bot has more context
-![Law Bot Image](https://storage.googleapis.com/example-offi-1/therapy%20info.webp)
-
-The mongo instance is running on AWS
-![Law Bot Image](https://storage.googleapis.com/example-offi-1/mongo%20on%20aws.webp)
-
-### **How AI Is Used Throughout the Project 🤖:**
-
-**(Category: Best Use of Amazon Bedrock)**
-
-- Text Generation and Text Expansion ✍️
-
-  - AI powers Haven's ability to transform brief, incomplete messages into coherent, full distress signals. Through Large Language Models (LLMs) like Titan Text G1 - Express, Haven expands user input, turning simple keywords or short phrases into comprehensive messages. This is essential in high-stress situations where a woman may not have the time or mental clarity to articulate her circumstances in full. The model ensures that the message accurately represents the severity of the situation while still being discreet.
-  - Example: If a user types “help, scared, locked in room,” the AI expands it into a full message like: "I am trapped in my room, scared and unable to leave. Please help me." This message is then encoded in an image to be shared safely.
-  - Using **Titan Text G1 - Express** LLM model
-
-- Culprit matching
-    - When a user reports a distress situation, details about the culprit's physical and behavioral characteristics are embedded as vector representations. These embeddings capture nuanced details about the individual, creating a unique profile that is stored in MongoDB’s vector database.
-   - Similarity Search with Cosine Similarity:
-    When an authority initiates a search by selecting "Find Match," the system performs a cosine similarity operation on the stored embeddings. By comparing the incoming profile with existing data, the system identifies top N matches based on similarity scores, allowing authorities to see connections across reported cases.
-  - Using **Titan Text G1 - Express** LLM model
-
-- AI-Powered Poem Generation 📝
-
-  - In moments of emotional distress, sometimes the simplest words can bring comfort. Haven's AI-Powered Poem Generator provides empowering, reassuring poems designed to remind women that help is on the way and that they are not alone. The AI generates short, encouraging poems based on the user's emotional state or current needs. These poems are designed to provide emotional support and the assurance that change is possible.
-  - Using **Titan Text G1 - Express** LLM model
-
-- AI to Detect Severity of Situations 🚨
-
-  - The LLM processes large text inputs and sorts them based on the severity and nature of the abuse, making it easier for authorities to quickly take action without reading through long descriptions. 
-
-- Image Generation 🖼️
-
-  - AI is used to create custom images based on user input, such as landscapes, flowers, or everyday objects. This enables the use of steganography—embedding distress messages within the images. These generated images appear completely innocent to outsiders, while secretly containing encoded help requests.
-  - Example: A user may select an image of a flower. The AI embeds a distress message, which looks like a normal social media post but contains a hidden cry for help when decoded.
-  - Using **Titan Image Generator VI** LLM model
-
-- AI-Powered Law Bot for Legal Support ⚖️
-
-  - Haven’s Law Bot leverages AI to offer instant, confidential legal guidance. Trained on a vast array of legal resources—including national constitutions, local laws, and case precedents—the AI provides women with easy-to-understand answers to their legal questions, empowering them to take control of their situations. The Law Bot breaks down complex legal jargon into simple language, ensuring clarity and accessibility.
-  - Example: A user can ask, "What should I do if my spouse is abusing me?" and the Law Bot will provide a clear step-by-step answer based on the relevant legal rights, such as filing a complaint or seeking a restraining order. 
-  - Using **Titan Text G1 - Express** LLM model
-
-- Therapy Bot for Mental Health Support 💬
-
-  - Haven’s Therapy Bot uses AI to provide personalized mental health support. This bot offers coping strategies, emotional support, and mindfulness exercises to help women manage anxiety, depression, and PTSD. By analyzing the user's input, the AI tailors its responses to the emotional state of the user, ensuring relevant advice is given in real-time.
-  - Example: If a user is feeling anxious, the Therapy Bot may suggest breathing exercises, a grounding technique, or offer calming affirmations to reduce stress.
-  - Using **Titan Text G1 - Express** LLM model
-
-
-- Vector Embedding for Personalized Experience 🧠
-
-  - To make interactions with the AI more personalized and contextually aware, vector embeddings are used to store and retrieve information. For each user, key data points (like their emotional state, past conversations, and preferences) are stored in MongoDB using embeddings generated from AI models like Sentence Transformers. This allows the AI to provide more informed responses over time.
-  - Example: The AI can remember past interactions, such as a user’s previous emotional states or preferred coping strategies. This personalized knowledge allows the AI to provide more targeted advice, improving the support it offers over time.
-  -  Using **Titan Text G1 - Express** LLM model and **LangChain for embedding**
-
-
-### **How Atlas Vector Search Is Used in the Project 🤖:**
-
-**(Category: Best Use of Atlas Vector Search)**
-
-Atlas Vector Search is leveraged in this project to efficiently search and match perpetrators based on previously stored data embeddings, enabling quick identification of repeat offenders. The use of Atlas Vector Search allows authorities to find the closest matches for a given suspect profile based on various characteristics, such as physical and behavioral features, stored as vector embeddings
-
-```
-    results_cursor = collection.aggregate(
-        [
-            {
-                "$vectorSearch": {
-                    "path": "culprit_embedding",
-                    "index": "culpritIndex",
-                    "queryVector": description_embedding,
-                    "numResults": num_results,
-                    "numCandidates": num_candidates,  # Required for approximate search
-                    "numDimensions": 768,  # Specify the dimensionality of the embedding
-                    "similarity": "euclidean",  # Specify similarity metric
-                    "type": "knn",  # Use "knn" for nearest-neighbor search
-                    "limit": num_results,  # Set the limit parameter
-                },
-            },
-            {
-                "$project": {
-                    "culprit": 1,  # Replace with the field that contains associated text
-                    "culprit_embedding": 1,  # Include embedding only if needed
-                    "_id": 1,  # Include the document ID if useful
-                }
-            },
-        ]
-    )
-```
-Key Benefits:
-
-- Speed: Atlas Vector Search accelerates the process of finding similar offenders, providing authorities with actionable data quickly.
-
-- Scalability: As the dataset grows, Atlas Vector Search scales seamlessly, allowing the system to handle an increasing number of reports and embeddings.
-
-- Accuracy: By using cosine similarity and nearest-neighbor search techniques, the system ensures accurate and relevant matches, even when dealing with complex or subtle variations in the described characteristics.
-
-### How Langchain Is Used in the Project
-
-LangChain allows efficient processing of large PDFs by recursively splitting them into smaller, manageable chunks and converting them into embeddings for further analysis or search.
-
-- Recursive PDF Splitting: LangChain’s PDFReader extracts text from PDFs, and the RecursiveCharacterTextSplitter splits the content into smaller sections based on size or logical breaks (e.g., paragraphs, chapters), ensuring that each chunk fits within token limits for embedding generation.
-- Embedding Generation: After splitting the text, LangChain uses embedding models (e.g., OpenAI Embeddings) to convert each chunk into a vector representation. These embeddings capture the semantic meaning of the text and can be stored in a vector database for similarity searches.
-
