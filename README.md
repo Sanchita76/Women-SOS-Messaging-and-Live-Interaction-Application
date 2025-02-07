@@ -13,9 +13,6 @@ Imagine a woman trapped in silence, enduring daily fear and abuse, unable to see
 ### DEMO VIDEO:
 https://www.youtube.com/watch?v=qxb3891TGzw 
 
-### Try it out
-https://haven-aws.framer.website/
-
 <br/>
 
 ## What it Does 💡
