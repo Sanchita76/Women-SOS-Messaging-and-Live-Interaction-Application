@@ -1,6 +1,6 @@
 <div align="center">
 
-# Haven  🚺👯🏽‍♀️👩🏻‍💼🛡️
+# Women's SOS Messaging and Live Interaction Application 👩🏻‍💼🛡️
 *A Silent Shield, A Strong Voice.*
 
 </div>
