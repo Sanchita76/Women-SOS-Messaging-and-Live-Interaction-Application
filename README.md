@@ -11,9 +11,8 @@ Imagine a woman trapped in silence, enduring daily fear and abuse, unable to see
 **Haven** is an innovative 🌐 AI-powered solution designed to empower women in abusive situations by providing discreet ways to seek help, access mental health support, and receive legal guidance—without the risk of exposure.
 
 ### Visit Site:
-https://haven-aws.framer.website
-
-<br/>
+https://haven-aws.framer.website (AI Avatar Live Interaction)<br/>
+https://amazonbedrock.vercel.app/ (Legal Support Bot and SOS Mesaging)<br>
 
 ## What it Does 💡
 
